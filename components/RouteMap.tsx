@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { STOPS, heroById, type HeroId } from "@/data/heroes";
 import { useSelectedHero } from "./SelectedHero";
@@ -82,7 +83,10 @@ export default function RouteMap() {
                 onFocus={() => setHover(s.hero)}
                 onClick={() => go(s.hero)}
               >
-                <span className={`n${s.secret ? " q" : ""}`}>{s.label}</span>
+                <span className={`thumb${s.secret ? " q" : ""}`}>
+                  <Image src={h.art.src} width={h.art.w} height={h.art.h} alt="" />
+                  <i>{s.label}</i>
+                </span>
                 <span>
                   <b>{h.role} · {h.name}</b>
                   <span>{h.place}</span>

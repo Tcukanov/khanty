@@ -4,8 +4,8 @@ import { useRef, useState } from "react";
 import { WISHES, heroById } from "@/data/heroes";
 
 function rubMessage(progress: number) {
-  if (progress >= 100) return "Варт тихо улыбнулся ✦";
-  if (progress === 0) return "Потрите кольцо";
+  if (progress >= 100) return "Желание загадано ✦";
+  if (progress === 0) return "Потрите кольцо и загадайте желание";
   if (progress < 35) return "Бронза теплеет…";
   if (progress < 75) return "Кольца оживают…";
   return "Ещё чуть‑чуть…";
@@ -82,7 +82,14 @@ export default function Wish() {
         </div>
         <div className="meter" aria-hidden="true"><i style={{ width: `${rub}%` }} /></div>
         <p className="msg" aria-live="polite">{rubMessage(rub)}</p>
-        <p className="hint">Проведите пальцем или мышкой по бронзе. С чистым сердцем — обязательно.</p>
+        {rub >= 100 ? (
+          <p className="hint done">
+            Теперь главное: найдите {hero.name} в городе и прикоснитесь к бронзе по‑настоящему — Варты помогают тем,
+            кто приходит к ним сам. Где искать: {hero.place}.
+          </p>
+        ) : (
+          <p className="hint">Проведите пальцем или мышкой по бронзе. С чистым сердцем — обязательно.</p>
+        )}
       </div>
     </div>
   );
