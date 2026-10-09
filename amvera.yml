@@ -5,4 +5,4 @@ meta:
     version: 20
 build:
   artifacts:
-    "out/*": /
+    "dist/*": /
