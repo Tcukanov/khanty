@@ -36,7 +36,7 @@ export const HEROES: Hero[] = [
     place: "у этнодеревни за городом, на территории СОК «Радуга»",
     placeLink: { label: "СОК «Радуга» ВКонтакте", href: "https://vk.ru/sokraduga" },
     art: { src: "/img/babushka.webp", w: 520, h: 836 },
-    silhouette: { src: "/img/sil1.png", w: 231, h: 360 },
+    silhouette: { src: "/img/sil-babushka.png", w: 223, h: 360 },
     about:
       "Старшая в семье. Её символ — сова: мудрость, которая видит в темноте, и тишина, в которой слышно главное. За плечами бабушка носит берестяной туесок, а в нём всегда лежат шишки и ягода.",
     signs: [
@@ -52,7 +52,7 @@ export const HEROES: Hero[] = [
     rings: 3,
     place: "у Нижневартовского краеведческого музея им. Т. Д. Шуваева",
     art: { src: "/img/dedushka.webp", w: 520, h: 753 },
-    silhouette: { src: "/img/sil2.png", w: 324, h: 360 },
+    silhouette: { src: "/img/sil-dedushka.png", w: 249, h: 360 },
     about:
       "Его символ — олень: благородство, терпение, способность слышать мир. Дедушка носит тяжёлый посох, одет в шубу, а на голове у него рога — будто ветви старого кедра, через которые он ловит шёпот леса.",
     signs: [
@@ -62,13 +62,13 @@ export const HEROES: Hero[] = [
   {
     id: "mama",
     role: "Мама",
-    name: "ОнаМояАнка",
+    name: "ОнаМояАньки",
     title: "хранительница тепла и гармонии",
     symbol: "лебедь",
     rings: 2,
     place: "у Центральной городской библиотеки им. М. К. Анисимковой",
     art: { src: "/img/mama.webp", w: 520, h: 909 },
-    silhouette: { src: "/img/sil6.png", w: 290, h: 360 },
+    silhouette: { src: "/img/sil-mama.png", w: 206, h: 360 },
     about:
       "Её символ — лебедь: верность, тихая сила, красота, которая не кричит о себе. Мама умеет так развести огонь в очаге, что даже в самый лютый мороз всем тепло.",
     signs: [
@@ -84,7 +84,7 @@ export const HEROES: Hero[] = [
     rings: 2,
     place: "на набережной",
     art: { src: "/img/otec.webp", w: 640, h: 613 },
-    silhouette: { src: "/img/sil3.png", w: 360, h: 350 },
+    silhouette: { src: "/img/sil-otec.png", w: 375, h: 360 },
     about:
       "Его символ — собака: верность, труд, надёжность. Рядом — его лайка, чуткая и преданная. Отец сидит в лодке и ловит рыбу сетями.",
     extra: [
@@ -108,7 +108,7 @@ export const HEROES: Hero[] = [
     rings: 1,
     place: "у Центра национальных культур",
     art: { src: "/img/syn.webp", w: 520, h: 1003 },
-    silhouette: { src: "/img/sil5.png", w: 161, h: 360 },
+    silhouette: { src: "/img/sil-syn.png", w: 186, h: 360 },
     about:
       "Его символ — трясогузка: птица, которая вьёт гнёзда там, где никто не вьёт, и поёт песни, которых никто не слышал. На его лице одно кольцо закручивается в спираль — так растёт творческая мысль.",
     extra: [
@@ -130,7 +130,7 @@ export const HEROES: Hero[] = [
     rings: 1,
     place: "у драматического театра",
     art: { src: "/img/doch.webp", w: 520, h: 725 },
-    silhouette: { src: "/img/sil4.png", w: 228, h: 360 },
+    silhouette: { src: "/img/sil-doch.png", w: 258, h: 360 },
     about:
       "Она верит в доброе раньше, чем видит его, и оттого доброе всегда приходит к ней первым. Две косы заплетены назад, на плечах — платок. «Платок — это как крылья, только тёплые», — говорит она.",
     signs: [
@@ -146,7 +146,7 @@ export const HEROES: Hero[] = [
     rings: 0,
     place: "место выберут жители",
     art: { src: "/img/chainik.webp", w: 520, h: 643 },
-    silhouette: { src: "/img/sil7.png", w: 189, h: 360 },
+    silhouette: { src: "/img/sil-chainik.png", w: 304, h: 360 },
     about: "На чайнике всегда лежит кот — довольный, считающий чайник своим. Сбоку на чайнике — шишка.",
     extra: [
       {

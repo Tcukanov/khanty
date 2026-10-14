@@ -267,3 +267,7 @@ footer .wrap{align-items:flex-start}
 .grant p{font-size:15px;color:var(--mist);max-width:28ch}
 .grant img{width:220px;height:auto}
 footer .legal{margin-top:34px;padding-top:20px;border-top:1px solid rgba(169,182,214,.15);font-size:14px;justify-content:space-between}
+.tag-actions{display:flex;flex-wrap:wrap;gap:10px}
+.vk-btn{font-family:var(--f-sc);font-size:16px;letter-spacing:.05em;text-decoration:none;background:var(--ochre);color:var(--ink);border-radius:999px;padding:8px 18px;border:1.5px solid var(--ochre)}
+.vk-btn:hover{background:transparent;color:var(--ochre)}
+.vk-link{font-family:var(--f-sc);letter-spacing:.05em;color:var(--ochre);text-decoration:none;border-bottom:1.5px solid currentColor;justify-self:start}

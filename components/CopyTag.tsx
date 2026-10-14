@@ -30,8 +30,16 @@ export default function CopyTag({ tag }: { tag: string }) {
   return (
     <div className="tag-box">
       <span className="tag" ref={tagRef}>{tag}</span>
-      <p>Публикуйте фото в соцсетях с этим хэштегом — лучшие попадут в альбом проекта.</p>
-      <button className="copy" type="button" onClick={copy}>{label}</button>
+      <p>
+        Публикуйте фото с этим хэштегом и подписывайтесь на группу «Легенды города эН» ВКонтакте — там новости о
+        новых Вартах и лучшие снимки участников.
+      </p>
+      <div className="tag-actions">
+        <button className="copy" type="button" onClick={copy}>{label}</button>
+        <a className="vk-btn" href="https://vk.ru/legendigorodaen" target="_blank" rel="noopener noreferrer">
+          Вступить в группу ВК
+        </a>
+      </div>
     </div>
   );
 }

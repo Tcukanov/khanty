@@ -291,6 +291,9 @@ export default function Home() {
           <div className="foot-brand">
             <Logo />
             <p>Варты — хранители Нижневартовска. Тексты о культуре ханты подготовлены краеведами.</p>
+            <a className="vk-link" href="https://vk.ru/legendigorodaen" target="_blank" rel="noopener noreferrer">
+              ВКонтакте: Легенды города эН ↗
+            </a>
           </div>
           <div className="grant">
             <p>Проект реализован при поддержке гранта Губернатора Югры</p>
