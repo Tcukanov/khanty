@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { WISHES, heroById } from "@/data/heroes";
+import { WISHES, heroById, placeText } from "@/data/heroes";
 
 function rubMessage(progress: number) {
   if (progress >= 100) return "Желание загадано ✦";
@@ -46,7 +46,7 @@ export default function Wish() {
         <div className="answer" aria-live="polite">
           <div className="who">{hero.role} {hero.name}</div>
           <p className="what"><b>Потрите: {sign.what.toLowerCase()}.</b> {sign.gift}</p>
-          <p className="where">где искать: {hero.place}</p>
+          <p className="where">где искать: {placeText(hero)}</p>
         </div>
       </div>
 
@@ -85,7 +85,7 @@ export default function Wish() {
         {rub >= 100 ? (
           <p className="hint done">
             Теперь главное: найдите {hero.name} в городе и прикоснитесь к бронзе по‑настоящему — Варты помогают тем,
-            кто приходит к ним сам. Где искать: {hero.place}.
+            кто приходит к ним сам. Где искать: {placeText(hero)}.
           </p>
         ) : (
           <p className="hint">Проведите пальцем или мышкой по бронзе. С чистым сердцем — обязательно.</p>

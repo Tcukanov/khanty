@@ -14,6 +14,8 @@ export type Hero = {
   rings: 0 | 1 | 2 | 3;
   place: string;
   placeLink?: Link;
+  /** Когда фигурку установят, напр. «ноябрь 2026». */
+  soon?: string;
   art: { src: string; w: number; h: number };
   silhouette: { src: string; w: number; h: number };
   about: string;
@@ -23,6 +25,9 @@ export type Hero = {
 };
 
 /** Тексты краеведов о роли каждого члена семьи в традиционной культуре ханты. */
+/** Адрес с пометкой об установке: «на набережной (установка декабрь 2026)». */
+export const placeText = (h: Hero) => [h.place, h.soon && `(установка ${h.soon})`].filter(Boolean).join(" ");
+
 export const LORE = loreJson as Partial<Record<HeroId, string[]>>;
 
 export const HEROES: Hero[] = [
@@ -66,7 +71,8 @@ export const HEROES: Hero[] = [
     title: "хранительница тепла и гармонии",
     symbol: "лебедь",
     rings: 2,
-    place: "у Центральной городской библиотеки им. М. К. Анисимковой",
+    place: "",
+    soon: "ноябрь 2026",
     art: { src: "/img/mama.webp", w: 520, h: 909 },
     silhouette: { src: "/img/sil-mama.png", w: 206, h: 360 },
     about:
@@ -83,6 +89,7 @@ export const HEROES: Hero[] = [
     symbol: "собака‑лайка",
     rings: 2,
     place: "на набережной",
+    soon: "декабрь 2026",
     art: { src: "/img/otec.webp", w: 640, h: 613 },
     silhouette: { src: "/img/sil-otec.png", w: 375, h: 360 },
     about:
@@ -144,7 +151,7 @@ export const HEROES: Hero[] = [
     title: "хранитель домашнего очага и уюта",
     symbol: "кот",
     rings: 0,
-    place: "место выберут жители",
+    place: "у крыльца Городской библиотеки №1 им. Г. И. Норкина",
     art: { src: "/img/chainik.webp", w: 520, h: 643 },
     silhouette: { src: "/img/sil-chainik.png", w: 304, h: 360 },
     about: "На чайнике всегда лежит кот — довольный, считающий чайник своим. Сбоку на чайнике — шишка.",

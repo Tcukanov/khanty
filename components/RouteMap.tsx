@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { STOPS, heroById, type HeroId } from "@/data/heroes";
+import { STOPS, heroById, placeText, type HeroId } from "@/data/heroes";
 import { useSelectedHero } from "./SelectedHero";
 
 let n = 0;
@@ -89,7 +89,7 @@ export default function RouteMap() {
                 </span>
                 <span>
                   <b>{h.role} · {h.name}</b>
-                  <span>{h.place}</span>
+                  <span>{placeText(h)}</span>
                 </span>
               </button>
             </li>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { HEROES, LORE, heroById, type Hero } from "@/data/heroes";
+import { HEROES, LORE, heroById, placeText, type Hero } from "@/data/heroes";
 import { useSelectedHero, type Selection } from "./SelectedHero";
 
 /** «ОнаМояАнкаАньки» → переносы только на стыках слов. */
@@ -26,6 +26,7 @@ function Detail({ hero }: { hero: Hero }) {
     <>
       <div className="art">
         <Image src={hero.art.src} width={hero.art.w} height={hero.art.h} alt={`${hero.role} ${hero.name}`} />
+        {hero.soon && <span className="soon-badge">установка<br />{hero.soon}</span>}
       </div>
       <div className="txt">
         <span className="role-l">{hero.role.toLowerCase()} · {hero.title}</span>
@@ -34,7 +35,7 @@ function Detail({ hero }: { hero: Hero }) {
           <div className="fact"><small>символ</small><span>{hero.symbol}</span></div>
           <div className="fact wide">
             <small>где искать</small>
-            <span>{hero.place}</span>
+            <span>{placeText(hero)}</span>
             {hero.placeLink && (
               <a className="ext" href={hero.placeLink.href} target="_blank" rel="noopener noreferrer">{hero.placeLink.label} ↗</a>
             )}
@@ -115,6 +116,7 @@ export default function Family() {
           >
             <span className="fig">
               <Image src={h.art.src} width={h.art.w} height={h.art.h} alt={`${h.role} ${h.name}`} />
+              {h.soon && <span className="soon-badge">установка<br />{h.soon}</span>}
             </span>
             <span className="role">{h.role.toLowerCase()}</span>
             <span className="nm">{splitName(h.name)}</span>
