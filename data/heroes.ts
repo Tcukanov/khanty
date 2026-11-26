@@ -71,8 +71,7 @@ export const HEROES: Hero[] = [
     title: "хранительница тепла и гармонии",
     symbol: "лебедь",
     rings: 2,
-    place: "",
-    soon: "ноябрь 2026",
+    place: "у крыльца перинатального центра, ул. Ленина, 20",
     art: { src: "/img/mama.webp", w: 520, h: 909 },
     silhouette: { src: "/img/sil-mama.png", w: 206, h: 360 },
     about:
@@ -189,10 +188,10 @@ export const WISHES: { label: string; hero: HeroId; sign: number }[] = [
 /** Точки на условной схеме маршрута (координаты viewBox 700×520). `secret` — место ещё не определено. */
 export const STOPS: { hero: HeroId; x: number; y: number; secret?: boolean }[] = [
   { hero: "babushka", x: 640, y: 180 },
-  { hero: "dedushka", x: 440, y: 120 },
-  { hero: "mama", x: 230, y: 140 },
-  { hero: "doch", x: 200, y: 260 },
-  { hero: "syn", x: 360, y: 300 },
-  { hero: "otec", x: 250, y: 420 },
-  { hero: "chainik", x: 480, y: 250, secret: true },
+  { hero: "doch", x: 470, y: 120 },
+  { hero: "syn", x: 310, y: 110 },
+  { hero: "mama", x: 180, y: 170 },
+  { hero: "dedushka", x: 220, y: 290 },
+  { hero: "chainik", x: 380, y: 280 },
+  { hero: "otec", x: 300, y: 410 },
 ];

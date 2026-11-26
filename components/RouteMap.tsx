@@ -8,6 +8,15 @@ import { useSelectedHero } from "./SelectedHero";
 let n = 0;
 const NUMBERED = STOPS.map((s) => ({ ...s, label: s.secret ? "?" : String(++n) }));
 
+/** Плавная линия через остановки по порядку (Catmull‑Rom → кривые Безье). */
+const ROUTE = STOPS.reduce((d, p, i, a) => {
+  if (i === 0) return `M${p.x} ${p.y}`;
+  const p0 = a[i - 2] ?? a[i - 1], p1 = a[i - 1], p3 = a[i + 1] ?? p;
+  const c1 = [p1.x + (p.x - p0.x) / 6, p1.y + (p.y - p0.y) / 6];
+  const c2 = [p.x - (p3.x - p1.x) / 6, p.y - (p3.y - p1.y) / 6];
+  return `${d} C ${c1.join(" ")}, ${c2.join(" ")}, ${p.x} ${p.y}`;
+}, "");
+
 export default function RouteMap() {
   const { select } = useSelectedHero();
   const [hover, setHover] = useState<HeroId | null>(null);
@@ -41,7 +50,7 @@ export default function RouteMap() {
           <path fill="#0f1a36" d="M610 120 l-10 22 h20z M640 150 l-12 26 h24z M620 200 l-10 22 h20z M660 230 l-12 26 h24z M630 270 l-10 22 h20z M670 110 l-10 22 h20z" />
           <text className="lbl" x="628" y="330" fill="#7f95c8" fontSize="16" textAnchor="middle">тайга</text>
           <path
-            d="M640 180 C 560 170, 520 120, 440 120 S 300 150, 230 140 S 150 220, 200 260 S 330 250, 360 300 S 300 400, 250 420"
+            d={ROUTE}
             fill="none"
             stroke="#e9b949"
             strokeWidth="3"
